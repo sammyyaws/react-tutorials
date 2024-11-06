@@ -1,11 +1,13 @@
 
 import './App.css';
-import  Greet from './greet.js'
+import  Greet from './greet.js';
+import Welcome from './welcome.js';
 function App() {
   return (
     <div className="App">
 
-    <Greet/>
+    <Greet/><Welcome/>
+
 
 
 
