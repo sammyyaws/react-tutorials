@@ -8,7 +8,7 @@ function App() {
 
     <Greet greet="Good Afternoon"><p>Which time are we in now </p></Greet>
     <Greet greet="Good Evening"/>
-    <Welcome/>
+  <Welcome name="Billion"/>
 
 
 
