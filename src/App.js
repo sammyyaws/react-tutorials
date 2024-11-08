@@ -6,8 +6,9 @@ function App() {
   return (
     <div className="App">
 
-    <Greet/><Welcome/>
-
+    <Greet greet="Good Afternoon"/>
+    <Greet greet="Good Evening"/>
+    <Welcome/>
 
 
 
