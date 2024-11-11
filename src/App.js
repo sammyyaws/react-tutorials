@@ -3,7 +3,7 @@ import './App.css';
 import ChangeColor from './changeColor.js';
 import  Greet from './greet.js';
 import Welcome from './welcome.js';
-
+import Counter from './Counter.js'
 function App() {
   return (
     <div className="App">
@@ -12,6 +12,7 @@ function App() {
     <Greet greet="Good Evening"/>
   <Welcome name="Billion"/>
   <ChangeColor/>
+  <Counter/>
 
 
 
