@@ -15,9 +15,12 @@ Count:this.state.Count +1
 
 
   render() {
+    //destructuring
+    
+    const {Count}=this.state
     return (
       <div>
-        <h5>{this.state.Count}</h5>
+        <h5>{Count}</h5>
         <button onClick={() =>{this.increaseLike()}}>Like</button>
       </div>
     )
