@@ -7,7 +7,15 @@ import React, { Component } from 'react'
    this.state = {
       Message:"Bind Me",
    }
+   //binding in the constructor
+   
+   //this.ClickHandler=this.ClickHandler.bind(this)
  }
+  ClickHandler(){
+    this.setState({
+        Message:"UNbind me when you are done"
+    })
+  }
  
   
   
@@ -15,7 +23,7 @@ import React, { Component } from 'react'
     return (
       <div>
       <div>{this.state.Message}</div>
-        <button >BIND </button>
+        <button onClick={this.ClickHandler}>BIND </button>
       </div>
     )
   }
