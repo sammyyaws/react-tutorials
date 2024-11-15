@@ -6,8 +6,14 @@ import ChiComponent from './childComponent';
     super(props)
   
     this.state = {
-       
+       content:" i am the best"
     }
+    this.greetParent=this.greetParent.bind(this);
+  };
+  greetParent(){
+    this.setState({
+      content:"i can never fail parent"
+    })
   }
   
   
@@ -16,7 +22,7 @@ import ChiComponent from './childComponent';
     return (
       <div>
      i am a goat
-     <ChiComponent/>
+     <ChiComponent greet={this.greetParent} />
      </div>
     ) };
 };

@@ -1,9 +1,9 @@
 import React from 'react';
 
-function ChiComponent() {
+function ChiComponent(props) {
   return (
     <div>
-    <button>Greet Parent</button>
+    <button onClick={this.props.greetParent}>Greet Parent</button>
       
     </div>
   )
