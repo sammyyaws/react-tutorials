@@ -1,17 +1,23 @@
-import React, { Component } from 'react'
-import childComponent from './childComponent'
+import React, { Component } from 'react';
+import childComponent from './childComponent';
 
- class parentsComponent extends Component {
+ class PComponent extends Component {
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+       
+    }
+  }
+  
+  
   
     render() {
     return (
       <div>
      i am a goat
-
-        
-      </div>
-    )
-  }
+     </div>
+    ) };
 };
 
-export default parentsComponent;
+export default PComponent;
