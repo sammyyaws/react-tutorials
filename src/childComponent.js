@@ -1,12 +1,12 @@
-import React from 'react'
+import React from 'react';
 
-function childComponent() {
+function ChiComponent() {
   return (
     <div>
     <button>Greet Parent</button>
       
     </div>
   )
-}
+};
 
-export default childComponent
+export default ChiComponent;

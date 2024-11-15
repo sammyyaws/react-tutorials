@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import childComponent from './childComponent';
+import ChiComponent from './childComponent';
 
  class PComponent extends Component {
   constructor(props) {
@@ -16,6 +16,7 @@ import childComponent from './childComponent';
     return (
       <div>
      i am a goat
+     <ChiComponent/>
      </div>
     ) };
 };
