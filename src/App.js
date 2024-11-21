@@ -6,7 +6,7 @@ import Welcome from './welcome.js';
 import Counter from './Counter.js'
 import EventBind from './EventBind.js';
 import PComponent from './parentComponent.js';
-
+import MapList from './MapList.js';
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
   <Welcome name="Billion"/>
   <ChangeColor/>
   <Counter/>*/}
- 
+ <MapList/>
 
 
    </div>

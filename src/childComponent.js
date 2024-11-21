@@ -3,7 +3,7 @@ import React from 'react';
 function ChiComponent(props) {
   return (
     <div>
-    <button onClick={this.props.greetParent}>Greet Parent</button>
+    <button onClick={props.greet}>Greet Parent</button>
       
     </div>
   )
