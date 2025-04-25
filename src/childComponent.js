@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ChiComponent(props) {
+const ChiComponent = props =>{
   return (
     <div>
     <button onClick={props.greet}>Greet Parent</button>

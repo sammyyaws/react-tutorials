@@ -2,11 +2,11 @@ import React from 'react'
 
 function Fragment() {
   return (
-    <div>
+    <React.Fragment>
     <h2>HEllO</h2>
     <p>i am testing this shit out of shit</p>
       
-    </div>
+    </React.Fragment>
   )
 }
 

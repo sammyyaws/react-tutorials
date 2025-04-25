@@ -21,7 +21,7 @@ import ChiComponent from './childComponent';
     render() {
     return (
       <div>
-     {this.state.content}
+     {this.state.content} 
      <ChiComponent greet={this.greetParent} />
      </div>
     ) };

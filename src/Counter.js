@@ -21,6 +21,7 @@ Count:this.state.Count +1
     return (
       <div>
         <h5>{Count}</h5>
+        <h2> {this.props.Subs}</h2>
         <button onClick={() =>{this.increaseLike()}}>Like</button>
       </div>
     )

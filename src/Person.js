@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Person(props) {
+const  Person =(props) => {
   return (
     <div>
      <h3>i am {props.getPerson.name} and i am {props.getPerson.age}</h3>
@@ -9,4 +9,4 @@ function Person(props) {
   )
 }
 
-export default Person;
+export default Person; 
