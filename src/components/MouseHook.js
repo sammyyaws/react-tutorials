@@ -13,6 +13,12 @@ function MouseCoordinate (){
     }
     useEffect(()=>{
         window.addEventListener('mousemove',getMousePoint)
+
+        return ()=>{
+
+            console.log("Umounted component")
+            window.removeEventListener('mousemove',getMousePoint)
+        }
     },[])
 
     return(
