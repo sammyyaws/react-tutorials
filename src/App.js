@@ -4,11 +4,14 @@ import UseStateWithObject from "./components/UseStateObject";
 import EffectCount from "./components/UseEffect1";
 import MouseCoordinate from "./components/MouseHook";
 import DisplayHook from "./components/Displayhook";
+import AutoCount from "./components/AutocountHook";
+import DataFetch from "./components/DataFetchHook";
 function App() {
   return (
     <div className="App">
-   
-    <DisplayHook/>
+    <DataFetch/>
+  {/*  <AutoCount/>
+    <DisplayHook/> */}
     {/* <EffectCount/> */}
 {/* <UseStateWithObject/> */}
     {/* <HookCountertwo/> */}
