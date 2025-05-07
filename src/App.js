@@ -14,7 +14,7 @@ import UseReduceCounter from "./components/useReduceCounter";
 import ReducerCounter2 from "./useReducerComplex";
 import MultipleuseReducer from "./components/MultipleuseReducer";
 import CompA from "./components/CompA";
-
+import FetchUseReducer from "./components/FetchUseReducer";
 
 
 
@@ -23,15 +23,15 @@ function App() {
 
   return (
     <div className="App">
-
-<CompA/>
-
+<FetchUseReducer/>
 
 
 
 
 
 
+{/* <CompA/>
+ */}
 {/* <MultipleuseReducer/> */}
 
 {/* <ReducerCounter2/> */}
