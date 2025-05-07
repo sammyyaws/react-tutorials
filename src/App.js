@@ -11,8 +11,7 @@ import AutoCount from "./components/AutocountHook";
 import DataFetch from "./components/DataFetchHook";
 import PassTheme from "./components/PassTheme";
 import UseReduceCounter from "./components/useReduceCounter";
-
-
+import ReducerCounter2 from "./useReducerComplex";
 
 
 
@@ -24,7 +23,15 @@ function App() {
 
   return (
     <div className="App">
-<UseReduceCounter/>
+
+<ReducerCounter2/>
+
+
+
+
+
+
+{/* <UseReduceCounter/> */}
 
 
 
