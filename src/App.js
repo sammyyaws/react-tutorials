@@ -12,7 +12,7 @@ import DataFetch from "./components/DataFetchHook";
 import PassTheme from "./components/PassTheme";
 import UseReduceCounter from "./components/useReduceCounter";
 import ReducerCounter2 from "./useReducerComplex";
-
+import MultipleuseReducer from "./components/MultipleuseReducer";
 
 
 
@@ -23,19 +23,19 @@ function App() {
 
   return (
     <div className="App">
-
-<ReducerCounter2/>
-
+<MultipleuseReducer/>
 
 
 
 
 
+
+
+
+
+
+{/* <ReducerCounter2/> */}
 {/* <UseReduceCounter/> */}
-
-
-
-
 
    {/*  <ThemeContext.Provider value="DarkTheme">
 <PassTheme/>
