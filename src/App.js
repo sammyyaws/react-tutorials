@@ -13,7 +13,7 @@ import PassTheme from "./components/PassTheme";
 import UseReduceCounter from "./components/useReduceCounter";
 import ReducerCounter2 from "./useReducerComplex";
 import MultipleuseReducer from "./components/MultipleuseReducer";
-
+import CompA from "./components/CompA";
 
 
 
@@ -23,7 +23,8 @@ function App() {
 
   return (
     <div className="App">
-<MultipleuseReducer/>
+
+<CompA/>
 
 
 
@@ -31,8 +32,7 @@ function App() {
 
 
 
-
-
+{/* <MultipleuseReducer/> */}
 
 {/* <ReducerCounter2/> */}
 {/* <UseReduceCounter/> */}
