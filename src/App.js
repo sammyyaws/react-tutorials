@@ -16,20 +16,20 @@ import MultipleuseReducer from "./components/MultipleuseReducer";
 import CompA from "./components/CompA";
 import FetchUseReducer from "./components/FetchUseReducer";
 import UseCallbackParent from "./components/useCallbackParent";
-
+import FocusRef from "./components/FocusRef";
 
 export const ThemeContext=React.createContext()
 function App() {
 
   return (
     <div className="App">
-<UseCallbackParent/>
+
+<FocusRef/>
 
 
 
-
-
-{/* <FetchUseReducer/> */}
+{/* <UseCallbackParent/>
+ */}{/* <FetchUseReducer/> */}
 {/* <CompA/>
  */}
 {/* <MultipleuseReducer/> */}
