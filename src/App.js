@@ -17,16 +17,27 @@ import CompA from "./components/CompA";
 import FetchUseReducer from "./components/FetchUseReducer";
 import UseCallbackParent from "./components/useCallbackParent";
 import FocusRef from "./components/FocusRef";
+import RefStore from "./components/RefStore";
+import Button2 from "./Custom hooks/button2";
+import Button1 from "./Custom hooks/Button1";
 
 export const ThemeContext=React.createContext()
 function App() {
 
   return (
     <div className="App">
+<Button2/>
+<Button1/>
 
-<FocusRef/>
 
 
+
+
+
+
+{/* <RefStore/> */}
+{/* <FocusRef/>
+ */}
 
 {/* <UseCallbackParent/>
  */}{/* <FetchUseReducer/> */}
