@@ -1,0 +1,11 @@
+nav {
+padding:30px;
+background-color: rgba(5, 28, 50, 0.259);
+}
+nav a{
+    text-decoration:none;
+    padding: 10px;
+    color:black;
+    font-weight: bold;
+    font-style: oblique;
+} 
