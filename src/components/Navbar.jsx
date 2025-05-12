@@ -9,7 +9,7 @@ export function Navbar() {
   }
   return (
     <>
-    <nav>
+    <nav className='mainNav'>
         <NavLink style={setStyle} to="/">Home</NavLink>
          <NavLink style={setStyle} to="/Products">Products</NavLink>
     </nav>
