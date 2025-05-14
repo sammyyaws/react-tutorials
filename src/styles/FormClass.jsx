@@ -38,3 +38,7 @@ export const button=clsx(
         'py-1',
          'px-2',
 )
+
+export const inputerror= clsx(
+    'text-xs'
+)

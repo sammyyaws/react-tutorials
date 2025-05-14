@@ -1,21 +1,66 @@
 import React from 'react'
 import "../styles/styles.css"
-import {formbox,label,input,button}from '../styles/FormClass'
+import {formbox,label,input,button,inputerror}from '../styles/FormClass'
 import { useFormik } from 'formik'
 
-function InstaForms() {
-const formik=useFormik({
-  initialValues:{
+//formik object definitions
+//state mangement property
+const initialValues= {
     Firstname:'',
     email:'',
     Username:''
-  },
-  onSubmit:values=>{
+  }
+  //onsubmit property
+  const onSubmit=values=>{
     console.log(values)
   }
+//validating property
+  const validate=values =>{
+    let errors={}
+      if(!values.Username){
+      errors.Username="Required"
+    }
+    //validating the firstname
+    if(!values.Firstname){
+      errors.Firstname="Required"
+    }
+//validating email
+if (!values.email){
+   errors.email="This field is required"
+} else if (!/[@.]/.test(values.email) ){
+ errors.email="you didint incude @ or ."
+  }
+   else if(/[^a-zA-Z0-9@.]/.test(values.email)){
+    errors.email="Check if you didnt include any symbol except @ or ."
+  }
+  else if(/[\s]/.test(values.email)){
+    errors.email="No Spaces allowed"
+  }
+return errors
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function InstaForms() {
+  //formik hook call and use
+const formik=useFormik({
+ initialValues,
+  onSubmit,
+  validate,
 })
 
-
+console.log(formik.errors)
 
 
 
@@ -30,17 +75,19 @@ const formik=useFormik({
        <label className={label} >
             Firstname </label>
               <input className={input} type="text" name="Firstname" id="Firstname" onChange={formik.handleChange} value={formik.values.Firstname}/>    
-   
+                    {formik.errors.Firstname? <div className={inputerror}>{formik.errors.Firstname}</div>:null}
 
           <label className={label}>Email  </label>
             <input className={input} type="text" name="email" id="email" onChange={formik.handleChange} value={formik.values.email} />
-      
+        {formik.errors.email? <div className={inputerror}>{formik.errors.email}</div>:null}
+
      
    
 
           <label className={label}>Username  </label>
+        <input className={input} type="text" name="Username" id="Username" onChange={formik.handleChange} value={formik.values.Username}/>
+               {formik.errors.Username? <div className={inputerror}>{formik.errors.Username}</div>:null}
 
-          <input className={input} type="text" name="Username" id="Username" onChange={formik.handleChange} value={formik.values.Username}/>
     <button type="submit" className={button}>Submit</button>
       </form>
          </div>
