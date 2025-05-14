@@ -40,5 +40,6 @@ export const button=clsx(
 )
 
 export const inputerror= clsx(
-    'text-xs'
+    'text-xs',
+    'text-red-300'
 )

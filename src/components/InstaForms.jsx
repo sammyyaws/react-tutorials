@@ -75,18 +75,18 @@ console.log(formik.touched)
        <label className={label} >
             Firstname </label>
               <input className={input} type="text" name="Firstname" id="Firstname" onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.Firstname}/>    
-                    {formik.errors.Firstname? <div className={inputerror}>{formik.errors.Firstname}</div>:null}
+                    {formik.touched.Firstname && formik.errors.Firstname? <div className={inputerror}>{formik.errors.Firstname}</div>:null}
 
           <label className={label}>Email  </label>
             <input className={input} type="text" name="email" id="email" onBlur={formik.handleBlur}onChange={formik.handleChange} value={formik.values.email} />
-        {formik.errors.email? <div className={inputerror}>{formik.errors.email}</div>:null}
+        {formik.touched.email && formik.errors.email? <div className={inputerror}>{formik.errors.email}</div>:null}
 
     
    
 
           <label className={label}>Username  </label>
         <input className={input} type="text" name="Username" id="Username" onBlur={formik.handleBlur}onChange={formik.handleChange} value={formik.values.Username}/>
-               {formik.errors.Username? <div className={inputerror}>{formik.errors.Username}</div>:null}
+               {formik.touched.Username && formik.errors.Username? <div className={inputerror}>{formik.errors.Username}</div>:null}
 
     <button type="submit" className={button}>Submit</button>
       </form>
