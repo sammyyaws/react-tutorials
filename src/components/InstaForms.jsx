@@ -1,8 +1,8 @@
 import React from 'react'
 import "../styles/styles.css"
 import {formbox,label,input,button,inputerror}from '../styles/FormClass'
-import { useFormik } from 'formik'
-
+import { useFormik,ErrorMessage } from 'formik'
+import * as Yup from 'yup'
 //formik object definitions
 //state mangement property
 const initialValues= {
@@ -10,12 +10,16 @@ const initialValues= {
     email:'',
     Username:''
   }
+
+
+
+
   //onsubmit property
   const onSubmit=values=>{
     console.log(values)
   }
-//validating property
-  const validate=values =>{
+//custom validating property function
+ /*  const validate=values =>{
     let errors={}
       if(!values.Username){
       errors.Username="Required"
@@ -37,8 +41,14 @@ if (!values.email){
     errors.email="No Spaces allowed"
   }
 return errors
-  }
+  } */
 
+//validating with yup
+const validationSchema= Yup.object({
+  Firstname:Yup.string().required("Required"),
+  email:Yup.string().email("Invalid email").required("Required"),
+  Username:Yup.string().required("Required")
+})
 
 
 
@@ -57,7 +67,7 @@ function InstaForms() {
 const formik=useFormik({
  initialValues,
   onSubmit,
-  validate,
+  validationSchema,
 })
 
 console.log(formik.touched)
@@ -72,19 +82,19 @@ console.log(formik.touched)
       <div className={formbox}>
       <form onSubmit={formik.handleSubmit}>
     
-       <label className={label} >
+       <label htmlFor="Firstname"className={label} >
             Firstname </label>
               <input className={input} type="text" name="Firstname" id="Firstname" onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.Firstname}/>    
                     {formik.touched.Firstname && formik.errors.Firstname? <div className={inputerror}>{formik.errors.Firstname}</div>:null}
 
-          <label className={label}>Email  </label>
+          <label htmlFor="email"className={label}>Email  </label>
             <input className={input} type="text" name="email" id="email" onBlur={formik.handleBlur}onChange={formik.handleChange} value={formik.values.email} />
         {formik.touched.email && formik.errors.email? <div className={inputerror}>{formik.errors.email}</div>:null}
 
     
    
 
-          <label className={label}>Username  </label>
+          <label htmlFor="Username"className={label}>Username  </label>
         <input className={input} type="text" name="Username" id="Username" onBlur={formik.handleBlur}onChange={formik.handleChange} value={formik.values.Username}/>
                {formik.touched.Username && formik.errors.Username? <div className={inputerror}>{formik.errors.Username}</div>:null}
 
