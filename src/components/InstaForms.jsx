@@ -60,7 +60,7 @@ const formik=useFormik({
   validate,
 })
 
-console.log(formik.errors)
+console.log(formik.touched)
 
 
 
@@ -74,18 +74,18 @@ console.log(formik.errors)
     
        <label className={label} >
             Firstname </label>
-              <input className={input} type="text" name="Firstname" id="Firstname" onChange={formik.handleChange} value={formik.values.Firstname}/>    
+              <input className={input} type="text" name="Firstname" id="Firstname" onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.Firstname}/>    
                     {formik.errors.Firstname? <div className={inputerror}>{formik.errors.Firstname}</div>:null}
 
           <label className={label}>Email  </label>
-            <input className={input} type="text" name="email" id="email" onChange={formik.handleChange} value={formik.values.email} />
+            <input className={input} type="text" name="email" id="email" onBlur={formik.handleBlur}onChange={formik.handleChange} value={formik.values.email} />
         {formik.errors.email? <div className={inputerror}>{formik.errors.email}</div>:null}
 
-     
+    
    
 
           <label className={label}>Username  </label>
-        <input className={input} type="text" name="Username" id="Username" onChange={formik.handleChange} value={formik.values.Username}/>
+        <input className={input} type="text" name="Username" id="Username" onBlur={formik.handleBlur}onChange={formik.handleChange} value={formik.values.Username}/>
                {formik.errors.Username? <div className={inputerror}>{formik.errors.Username}</div>:null}
 
     <button type="submit" className={button}>Submit</button>
