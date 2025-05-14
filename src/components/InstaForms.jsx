@@ -9,6 +9,9 @@ const formik=useFormik({
     Firstname:'',
     email:'',
     Username:''
+  },
+  onSubmit:values=>{
+    console.log(values)
   }
 })
 
@@ -22,7 +25,7 @@ const formik=useFormik({
   return (
    
       <div className={formbox}>
-      <form >
+      <form onSubmit={formik.handleSubmit}>
     
        <label className={label} >
             Firstname </label>
@@ -38,7 +41,7 @@ const formik=useFormik({
           <label className={label}>Username  </label>
 
           <input className={input} type="text" name="Username" id="Username" onChange={formik.handleChange} value={formik.values.Username}/>
-    <button className={button}>Submit</button>
+    <button type="submit" className={button}>Submit</button>
       </form>
          </div>
    
