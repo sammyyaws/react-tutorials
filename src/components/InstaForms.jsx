@@ -10,7 +10,7 @@ import * as Yup from 'yup'
 const initialValues= {
     Firstname:'',
     email:'',
-    Username:''
+    Comment:''
   }
 
 
@@ -26,7 +26,7 @@ const initialValues= {
 const validationSchema= Yup.object({
   Firstname:Yup.string().required("Required"),
   email:Yup.string().email("Invalid email").required("Required"),
-  Username:Yup.string().required("Required")
+  Comment:Yup.string().required("Required")
 })
 
 
@@ -69,10 +69,10 @@ function InstaForms() {
     
    
 
-          <label htmlFor="Username"className={label}>Username  </label>
-        <Field className={input} type="text" name="Username" id="Username"
+          <label htmlFor="Comment"className={label}>Comment  </label>
+        <Field as="textarea" className={input} type="text" name="Comment" id="Comment"
         />
-         <ErrorMessage component="div" name="Username" className={inputerror}/>
+         <ErrorMessage component="div" name="Comment" className={inputerror}/>
     <button type="submit" className={button}>Submit</button>
       </Form></Formik>
          </div>
