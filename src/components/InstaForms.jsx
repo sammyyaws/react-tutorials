@@ -10,7 +10,8 @@ import * as Yup from 'yup'
 const initialValues= {
     Firstname:'',
     email:'',
-    Comment:''
+    Comment:'',
+    Address:""
   }
 
 
@@ -26,32 +27,13 @@ const initialValues= {
 const validationSchema= Yup.object({
   Firstname:Yup.string().required("Required"),
   email:Yup.string().email("Invalid email").required("Required"),
-  Comment:Yup.string().required("Required")
+  Comment:Yup.string().required("Required"),
+  Address:Yup.string().required()
 })
 
 
-
-
-
-
-
-
-
-
-
-
-
 function InstaForms() {
-  
-
-
-
-
-
-
-
-
-  return (
+   return (
    
       <div className={formbox}>
       <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
@@ -67,8 +49,25 @@ function InstaForms() {
          />
        <ErrorMessage  component="div"name="email" className={inputerror}/>
     
-   
+      {/*  adress field using the render props */}
+     <label htmlFor="Address"className={label}>Address  </label>
+            <Field name="Address">
+          {
+            (props)=>{
+              console.log(props)
+              const {meta,field,forms}=props
+              return (
+                <>
+                  <input className={input} type="text" id='Address' {...field}/>
+                 { meta.touched && meta.error ? <div className={inputerror} >{meta.error}</div>:null}
+                 </>
+              )
 
+            }
+          }
+
+            </Field>
+      
           <label htmlFor="Comment"className={label}>Comment  </label>
         <Field as="textarea" className={input} type="text" name="Comment" id="Comment"
         />

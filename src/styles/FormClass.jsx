@@ -8,7 +8,7 @@ export const formbox=clsx(
       'backdrop-blur-md',
        'bg-white shadow-md',
         'md:w-1/2', 
-        'h-80',
+        'h-100',
          'w-60',
           'lg:w-1/4',
            'lg:h-1/2',
