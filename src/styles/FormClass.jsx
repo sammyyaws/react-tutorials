@@ -8,16 +8,17 @@ export const formbox=clsx(
       'backdrop-blur-md',
        'bg-white shadow-md',
         'md:w-1/2', 
-        'h-100',
+        'h-120',
          'w-60',
           'lg:w-1/4',
-           'lg:h-1/2',
+           'lg:h-3/4',
             'rounded-md bg'
 )
 
 export const label=clsx(
     ' m-2',
-    ' block'
+    ' block',
+    'text-sm'
 )
 export const input=clsx(
     "border-1", 

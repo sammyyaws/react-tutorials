@@ -10,12 +10,13 @@ import * as Yup from 'yup'
 const initialValues= {
     Firstname:'',
     email:'',
-    Comment:'',
+  
     Address:"",
     socials:{
      whatsapp:" ",
      instagram:" "
-    }
+    },
+    phonenumbers:['','']
   }
 
 
@@ -31,12 +32,13 @@ const initialValues= {
 const validationSchema= Yup.object({
   Firstname:Yup.string().required("Required"),
   email:Yup.string().email("Invalid email").required("Required"),
-  Comment:Yup.string().required("Required"),
+ 
   Address:Yup.string().required(),
   socials:Yup.object ({
   whatsapp:Yup.string().required("required"),
   instagram:Yup.string().required("required")
-  })
+  }),
+  phonenumbers:Yup.array().of(Yup.string().required("Required"))
 })
 
 
@@ -62,7 +64,7 @@ function InstaForms() {
             <Field name="Address">
           {
             (props)=>{
-              console.log(props)
+          
               const {meta,field}=props
               return (
                 <>
@@ -88,7 +90,20 @@ function InstaForms() {
         <Field  className={input} type="text" name="socials.instagram" id="instagram"
         />
          <ErrorMessage component="div" name="socials.instagram" className={inputerror}/>
+
+{/*           storing array data
+ */}        
+  <label htmlFor="primaryPhone"className={label}>First Phonenumber </label>
+        <Field  className={input} type="text" name="phonenumbers[0]" id="primaryPhone"
+        />
+         <ErrorMessage component="div" name="phonenumbers[0]" className={inputerror}/>
+
+         <label htmlFor="secondaryPhone"className={label}>Second Phonenumber </label>
+        <Field  className={input} type="text" name="phonenumbers[1]" id="secondaryPhone"
+        />
+         <ErrorMessage component="div" name="phonenumbers[1]" className={inputerror}/>
     <button type="submit" className={button}>Submit</button>
+
       </Form></Formik>
          </div>
    
