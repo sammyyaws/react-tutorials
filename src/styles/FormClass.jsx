@@ -31,6 +31,16 @@ export const input=clsx(
        'w-full',
 )
 
+export const smbut=clsx(
+    'bg-blue-300',
+     "mx-2",
+      'my-1',
+       'rounded-md',
+       "w-10",
+        'py-1',
+         'px-1',
+)
+
 export const button=clsx(
     'bg-blue-300',
      'block',

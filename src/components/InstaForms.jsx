@@ -1,7 +1,7 @@
 import React from 'react'
 import "../styles/styles.css"
-import {formbox,label,input,button,inputerror}from '../styles/FormClass'
-import { Formik, Form,Field,ErrorMessage} from 'formik'
+import {formbox,label,input,button,inputerror,smbut}from '../styles/FormClass'
+import { Formik, Form,Field,ErrorMessage,FieldArray} from 'formik'
 import * as Yup from 'yup'
 //formik object definitions
 //state mangement property
@@ -16,7 +16,8 @@ const initialValues= {
      whatsapp:" ",
      instagram:" "
     },
-    phonenumbers:['','']
+      phNumbers:[''] 
+
   }
 
 
@@ -37,8 +38,10 @@ const validationSchema= Yup.object({
   socials:Yup.object ({
   whatsapp:Yup.string().required("required"),
   instagram:Yup.string().required("required")
+
   }),
-  phonenumbers:Yup.array().of(Yup.string().required("Required"))
+  phNumbers:Yup.array().of(Yup.string().required("required"))
+  
 })
 
 
@@ -91,17 +94,32 @@ function InstaForms() {
         />
          <ErrorMessage component="div" name="socials.instagram" className={inputerror}/>
 
-{/*           storing array data
- */}        
-  <label htmlFor="primaryPhone"className={label}>First Phonenumber </label>
-        <Field  className={input} type="text" name="phonenumbers[0]" id="primaryPhone"
+{/*       FieldArray Component 
+ */}      
+      <FieldArray name="phNumbers">
+        {
+          (props)=>{
+           const {form,push,remove}=props
+           const {values}=form
+            const{phNumbers}=values
+         return phNumbers.map((phNumber, index)=>(
+            <div key={index}>
+           <label htmlFor=""className={label}>phNumbers </label>
+             <Field  className={input} type="text" name={`phNumber[${index}]`}
         />
-         <ErrorMessage component="div" name="phonenumbers[0]" className={inputerror}/>
+         <button className={smbut} type="button"  onClick={()=>{push("")}}>+</button>
+          { index > 0 && <button className={smbut} type="button"   onClick={()=>{remove(index)}}>-</button>}
 
-         <label htmlFor="secondaryPhone"className={label}>Second Phonenumber </label>
-        <Field  className={input} type="text" name="phonenumbers[1]" id="secondaryPhone"
-        />
-         <ErrorMessage component="div" name="phonenumbers[1]" className={inputerror}/>
+
+              </div>
+             ))
+
+         
+
+          }
+        }
+      </FieldArray>   
+  
     <button type="submit" className={button}>Submit</button>
 
       </Form></Formik>
