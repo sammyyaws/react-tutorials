@@ -12,11 +12,7 @@ const initialValues= {
     email:'',
   
     Address:"",
-    socials:{
-     whatsapp:" ",
-     instagram:" "
-    },
-      phNumbers:[''] 
+    phNumbers:[''] 
 
   }
 
@@ -53,6 +49,9 @@ function InstaForms() {
    
       <div className={formbox}>
       <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
+      {formik=>{
+        console.log(formik)
+        return(
       <Form >
     
        <label htmlFor="Firstname"className={label} >
@@ -111,10 +110,15 @@ function InstaForms() {
           }
         }
       </FieldArray>   
-  
+   <button type="button" onClick={()=>formik.validateField("Firstname")}className={button}> Field validation</button>
+    <button type="button" onClick={()=>formik.setFieldTouched("Firstname")}className={button}> Field visited</button>
+ <button type="button" onClick={()=>formik.validateForm()}className={button}>All</button>
+     <button type="button" onClick={()=>formik.setTouched({ Firstname:true,email:true,Address:true,  phNumbers:true})}className={button}>touched</button>
+
     <button type="submit" className={button}>Submit</button>
 
-      </Form></Formik>
+      </Form>)
+      }}</Formik>
          </div>
    
   )
