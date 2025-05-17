@@ -31,18 +31,21 @@ const initialValues= {
 
 //validating with yup
 const validationSchema= Yup.object({
-  Firstname:Yup.string().required("Required"),
+  
   email:Yup.string().email("Invalid email").required("Required"),
  
   Address:Yup.string().required(),
-  socials:Yup.object ({
-  whatsapp:Yup.string().required("required"),
-  instagram:Yup.string().required("required")
-
-  }),
+  
   phNumbers:Yup.array().of(Yup.string().required("required"))
   
 })
+const validateFirstname=value=>{
+  let error
+  if (!value) {
+  error="Required"
+  }
+  return error
+}
 
 
 function InstaForms() {
@@ -54,7 +57,7 @@ function InstaForms() {
     
        <label htmlFor="Firstname"className={label} >
             Firstname </label>
-              <Field className={input} type="text" name="Firstname" id="Firstname"   />   
+              <Field className={input} type="text" name="Firstname" id="Firstname" validate= {validateFirstname} />   
              <ErrorMessage component="div" name="Firstname" className={inputerror}/>
              {/**email field */}
           <label htmlFor="email"className={label}>Email  </label>
@@ -82,17 +85,6 @@ function InstaForms() {
             </Field>
       
           
-
-     {/* socials */}
-     <label htmlFor="socials.whatsapp"className={label}>Whatsapp  </label>
-        <Field  className={input} type="text" name="socials.whatsapp" id="whatsapp"
-        />
-         <ErrorMessage component="div" name="socials.whatsapp" className={inputerror}/>
-
-          <label htmlFor="socials.instagram"className={label}>Instagram  </label>
-        <Field  className={input} type="text" name="socials.instagram" id="instagram"
-        />
-         <ErrorMessage component="div" name="socials.instagram" className={inputerror}/>
 
 {/*       FieldArray Component 
  */}      

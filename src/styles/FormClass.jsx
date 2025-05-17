@@ -9,9 +9,10 @@ export const formbox=clsx(
        'bg-white shadow-md',
         'md:w-1/2', 
         'h-120',
+        'overflow-y-auto',
          'w-60',
           'lg:w-1/4',
-           'lg:h-3/4',
+           'lg:h-1/2',
             'rounded-md bg'
 )
 
