@@ -34,6 +34,7 @@ const initialValues= {
     console.log(values)
     console.log(onSubmitProps)
     onSubmitProps.setSubmitting(false)
+    onSubmitProps.resetForm()
   }
 
 
