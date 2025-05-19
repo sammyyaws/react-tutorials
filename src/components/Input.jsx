@@ -7,7 +7,7 @@ function Input(props) {
   return (
     <div>
     <label className='label'>{label}</label>
-      <Field className={input}id={name} name={name} {...rest}/>
+      <Field className={input}id={name}  name={name} {...rest}/>
       <ErrorMessage className={inputerror} component="div" name={name}/>
     </div>
   )
