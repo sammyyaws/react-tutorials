@@ -7,7 +7,7 @@ function Textarea(props) {
   return ( 
     <div>
     <label className={label} htmlFor={name}>{label}</label>
-    <Field className={input} as="textarea" name={name} {...rest}/>
+    <Field id={name}className={input} as="textarea" name={name} {...rest}/>
     <ErrorMessage component="div" className={inputerror} name={name}/>
       
     </div>
