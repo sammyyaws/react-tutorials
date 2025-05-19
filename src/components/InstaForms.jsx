@@ -88,7 +88,7 @@ function InstaForms() {
 {/*       FieldArray Component 
  */}    
    
-    <button type="submit" disabled={!formik.isValid}className={button}>Submit</button>
+    <button type="submit" disabled={!(formik.isValid && formik.dirty )}className={button}>Submit</button>
 
       </Form>)
       }}</Formik>
