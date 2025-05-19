@@ -23,6 +23,7 @@ const initialValues= {
   const onSubmit=(values,onSubmitProps)=>{
     console.log(values)
     console.log(onSubmitProps)
+    onSubmitProps.setSubmitting(false)
   }
 
 
@@ -89,7 +90,7 @@ function InstaForms() {
 {/*       FieldArray Component 
  */}    
    
-    <button type="submit" disabled={formik.isSubmitting}className={button}>Submit</button>
+    <button type="submit" disabled={ !formik.isValid || formik.isSubmitting}className={button}>Submit</button>
 
       </Form>)
       }}</Formik>
