@@ -1,8 +1,9 @@
-import React from 'react'
+import React,{useState} from 'react'
 import "../styles/styles.css"
 import {formbox,label,input,button,inputerror,}from '../styles/FormClass'
 import { Formik,FastField, Form,Field,ErrorMessage,FieldArray} from 'formik'
 import * as Yup from 'yup'
+
 //formik object definitions
 //state mangement property
 
@@ -12,6 +13,15 @@ const initialValues= {
     email:'',
   
     Address:"",
+
+
+  }
+
+  const savedValues= {
+    Firstname:'Gonar',
+    email:'G@hot.com',
+  
+    Address:"Junt2",
 
 
   }
@@ -47,10 +57,12 @@ const validateFirstname=value=>{
 
 
 function InstaForms() {
+  const [formValues,setFormValues]=useState(null)
+
    return (
    
       <div className={formbox}>
-      <Formik initialValues={initialValues} onSubmit={onSubmit} validateOnMount validationSchema={validationSchema}>
+      <Formik initialValues={formValues || initialValues} onSubmit={onSubmit} enableReinitialize validateOnMount validationSchema={validationSchema}>
       {formik=>{
         console.log(formik)
         return(
@@ -91,7 +103,7 @@ function InstaForms() {
  */}    
    
     <button type="submit" disabled={ !formik.isValid || formik.isSubmitting}className={button}>Submit</button>
-
+     <button type="submit" onClick={()=>{setFormValues(savedValues)}}>load saved</button>
       </Form>)
       }}</Formik>
          </div>
