@@ -11,8 +11,8 @@ export const formbox=clsx(
         'h-120',
         'overflow-y-auto',
          'w-60',
-          'lg:w-1/4',
-           'lg:h-1/2',
+          'lg:w-1/3',
+           'lg:h-2/3',
             'rounded-md bg'
 )
 
