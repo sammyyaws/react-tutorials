@@ -8,7 +8,8 @@ const initialValues={
 email:"",
 comment:"",
 SelectOption:"",
-radioOption:""
+radioOption:"",
+checkboxOption:[]
 }
 //validating 
 const validationSchema=Yup.object({
@@ -16,6 +17,7 @@ email:Yup.string().required("This field is required"),
 comment:Yup.string().required("This field is required"),
 SelectOption:Yup.string().required("choose something"),
 radioOption:Yup.string().required("choose something"),
+checkboxOption:Yup.array().min(1,"kindly select something")
 }) 
 //on submit function
 const onSubmit =values=>{
@@ -34,9 +36,18 @@ const radioValues=[
  
   {key:"Fries",value:"Fries"},
   {key:"Plain Rice",value:"Plain Rice"},
-
-
 ]
+
+//checkbox option values
+//radio option values
+const checkboxValues=[
+ 
+  {key:"Banku",value:"Banku"},
+  {key:"Plain Rice",value:"Plain Rice"},
+    {key:"Jollof",value:"Jollof"},
+  
+]
+
 
 function FormikContainer() {
 
@@ -53,6 +64,9 @@ function FormikContainer() {
 type="email" label="Your favorite App"/>
 <FormikControl control="radio" name="radioOption" 
 options={radioValues}  label="Your favorite food"/>
+
+<FormikControl control="checkbox" name="checkboxOption" 
+options={checkboxValues}  label="Select the rest"/>
 
         <button className={button} type="submit" disabled={!formik.isValid || formik.isSubmitting}> Submit</button>
         </Form>

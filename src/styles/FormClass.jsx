@@ -7,12 +7,12 @@ export const formbox=clsx(
       'items-center',
       'backdrop-blur-md',
        'bg-white shadow-md',
-        'md:w-1/2', 
-        'h-120',
-        'overflow-y-auto',
-         'w-60',
-          'lg:w-1/3',
-           'lg:h-2/3',
+        'md:w-100', 
+        'h-140',
+        "px-4",
+         'w-120',
+          'lg:w-1/2',
+           'lg:h-120',
             'rounded-md bg'
 )
 
@@ -26,10 +26,10 @@ export const input=clsx(
     'block',
      'outline-none', 
      'rounded-sm', 
-     'py-1', 
+     'py-2', 
      'px-2',
-       'h-full', 
-       'w-full',
+        
+       'w-80',
 )
 
 export const smbut=clsx(
