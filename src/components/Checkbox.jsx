@@ -7,17 +7,18 @@ const {name,label,options,...rest}=props
   return (
     <div>
     <label>{label}</label>
-   <Field name={name} {...rest}>
+   <Field className={input} name={name} {...rest}>
    {({field})=>(
     options.map(option=>(
         <React.Fragment key={option.key}>
+        <div>
      <input type="checkbox" {...field}
      id={option.key}
      value={option.value} 
      checked={field.value.includes(option.value)}
-     className={input} />
+      />
      <label >{option.key}</label>
-
+</div>
      </React.Fragment>
     ))
 

@@ -9,7 +9,8 @@ email:"",
 comment:"",
 SelectOption:"",
 radioOption:"",
-checkboxOption:[]
+checkboxOption:[],
+DateSelected:new Date(2000,2,10)
 }
 //validating 
 const validationSchema=Yup.object({
@@ -17,7 +18,8 @@ email:Yup.string().required("This field is required"),
 comment:Yup.string().required("This field is required"),
 SelectOption:Yup.string().required("choose something"),
 radioOption:Yup.string().required("choose something"),
-checkboxOption:Yup.array().min(1,"kindly select something")
+checkboxOption:Yup.array().min(1,"kindly select something"),
+DateSelected:Yup.date().required("Chose a date")
 }) 
 //on submit function
 const onSubmit =values=>{
@@ -44,7 +46,7 @@ const checkboxValues=[
  
   {key:"Banku",value:"Banku"},
   {key:"Plain Rice",value:"Plain Rice"},
-    {key:"Jollof",value:"Jollof"},
+
   
 ]
 
@@ -68,6 +70,8 @@ options={radioValues}  label="Your favorite food"/>
 <FormikControl control="checkbox" name="checkboxOption" 
 options={checkboxValues}  label="Select the rest"/>
 
+<FormikControl control="date" name="DateSelected" 
+ label="Birthday"/>
         <button className={button} type="submit" disabled={!formik.isValid || formik.isSubmitting}> Submit</button>
         </Form>
 

@@ -17,7 +17,7 @@ function RadioButtons(props) {
                 {...field} 
                value={option.value}  
                checked={field.value===option.value}
-                className={input}
+             
                
                /> 
                <label  htmlFor={option.value}>{option.key}</label></div> 
