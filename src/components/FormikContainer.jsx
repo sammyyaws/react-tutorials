@@ -17,9 +17,18 @@ DateSelected:new Date(2000,2,10)
 const validationSchema=Yup.object({
 password:Yup.string().min(8,"the password should have at least 8 characters").required("This field is required"),
 confirmPassword:Yup.string().oneOf([Yup.ref("password"),""],"password does not match").required("this field is required"),
-comment:Yup.string().required("This field is required"),
+comment:Yup.string().max(50).required("This field is required"),
 SelectOption:Yup.string().required("choose something"),
-radioOption:Yup.string().required("choose something"),
+radioOption:Yup.string().when("SelectOption",(value,schema)=>{
+  switch(value){
+    case "Youtube":
+     return schema.required("Select one here You chose youtube")
+    case "Instagram":
+      return schema.required("Select one here You chose Instagram")
+      default:
+        return schema.notRequired()
+  }
+}),
 checkboxOption:Yup.array().min(1,"kindly select something"),
 DateSelected:Yup.date().required("Chose a date")
 }) 
@@ -32,7 +41,7 @@ const optionValues=[
   {key:"Choose", value:""},
   {key:"Youtube",value:"Youtube"},
   {key:"Instagram",value:"Instagram"},
-  {key:"Tiktok",value:"tiktok"}
+  {key:"Tiktok",value:"Tiktok"}
 
 ]
 //radio option values
