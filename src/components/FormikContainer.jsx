@@ -16,7 +16,7 @@ DateSelected:new Date(2000,2,10)
 //validating 
 const validationSchema=Yup.object({
 password:Yup.string().min(8,"the password should have at least 8 characters").required("This field is required"),
-confirmPassword:Yup.string().oneOf([Yup.ref("password")],"password does not match").required("this field is required"),
+confirmPassword:Yup.string().oneOf([Yup.ref("password"),""],"password does not match").required("this field is required"),
 comment:Yup.string().required("This field is required"),
 SelectOption:Yup.string().required("choose something"),
 radioOption:Yup.string().required("choose something"),
