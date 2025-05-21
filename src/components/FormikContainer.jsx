@@ -5,7 +5,8 @@ import { formbox,button } from '../styles/FormClass'
 import FormikControl from './FormikControl'
 //initail values
 const initialValues={
-email:"",
+password:"",
+confirmPassword:"",
 comment:"",
 SelectOption:"",
 radioOption:"",
@@ -14,7 +15,8 @@ DateSelected:new Date(2000,2,10)
 }
 //validating 
 const validationSchema=Yup.object({
-email:Yup.string().required("This field is required"),
+password:Yup.string().min(8,"the password should have at least 8 characters").required("This field is required"),
+confirmPassword:Yup.string().oneOf([Yup.ref("password")],"password does not match").required("this field is required"),
 comment:Yup.string().required("This field is required"),
 SelectOption:Yup.string().required("choose something"),
 radioOption:Yup.string().required("choose something"),
@@ -45,7 +47,7 @@ const radioValues=[
 const checkboxValues=[
  
   {key:"Banku",value:"Banku"},
-  {key:"Plain Rice",value:"Plain Rice"},
+  {key:"Jollof Rice",value:"Jollof Rice"},
 
   
 ]
@@ -60,7 +62,8 @@ function FormikContainer() {
     {  formik=>(
         <Form>                    
        
-<FormikControl control="input" name="email" type="email" label="Email"/>
+<FormikControl control="input" name="password" type="password" label="Password"/>
+<FormikControl control="input" name="confirmPassword" type="password" label="Confrim Password"/>
 <FormikControl control="textarea" name="comment" type="textarea" label="Comment"/>
 <FormikControl control="select" name="SelectOption" options={optionValues} 
 type="email" label="Your favorite App"/>
