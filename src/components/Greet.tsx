@@ -1,7 +1,7 @@
 type Props={
     name:string;
     messages:number;
-    isLoggedin:boolean
+    isLoggedin:boolean 
 }
 
 function Greet(props:Props) {

@@ -2,3 +2,7 @@
 .header {
     @apply my-0.5 h-20 bg-blue-500;
 }
+
+h2{
+    @apply font-bold text-xl;
+}
