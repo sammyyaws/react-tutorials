@@ -1,5 +1,5 @@
 type Buttonprop={
-    handleClick:()=>void;
+    handleClick:(event:React.MouseEvent<HTMLButtonElement>)=>void;
 }
 function Button(props:Buttonprop) {
   return (
