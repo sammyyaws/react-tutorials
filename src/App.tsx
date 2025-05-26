@@ -41,7 +41,7 @@ function App() {
      {/*  <Greet name='Samuel' messages={10} isLoggedin={true}/>
       <Person name={PersonName}/>
       <PersonList Persons={namelist}/> */}
-      <Button handleClick={(event)=>(console.log("This is an event prop"),event)}/>
+      <Button handleClick={(event,id)=>(console.log("This is an event prop"),event,id)}/>
     </>
   )
 }
