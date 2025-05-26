@@ -6,6 +6,9 @@ import Head from "./components/Head"
 import Status from "./components/Status"
 import Eye from "./components/Eye"
 import Button from "./components/Button"
+import Input from "./components/Input"
+
+
 /* const PersonName={
 
  First:"Samuel",
@@ -42,6 +45,7 @@ function App() {
       <Person name={PersonName}/>
       <PersonList Persons={namelist}/> */}
       <Button handleClick={(event,id)=>(console.log("This is an event prop"),event,id)}/>
+        <Input value="" handleChange={(event)=>console.log(event)}/>
     </>
   )
 }
