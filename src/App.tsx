@@ -5,6 +5,7 @@ import PersonList from "./components/PersonList" */
 import Head from "./components/Head"
 import Status from "./components/Status"
 import Eye from "./components/Eye"
+import Button from "./components/Button"
 /* const PersonName={
 
  First:"Samuel",
@@ -40,6 +41,7 @@ function App() {
      {/*  <Greet name='Samuel' messages={10} isLoggedin={true}/>
       <Person name={PersonName}/>
       <PersonList Persons={namelist}/> */}
+      <Button handleClick={()=>(console.log("This is an event prop"))}/>
     </>
   )
 }
