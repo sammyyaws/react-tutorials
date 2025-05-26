@@ -4,7 +4,7 @@ import Person from "./components/Person"
 import PersonList from "./components/PersonList" */
 import Head from "./components/Head"
 import Status from "./components/Status"
-
+import Eye from "./components/Eye"
 /* const PersonName={
 
  First:"Samuel",
@@ -35,7 +35,8 @@ function App() {
   return (
     < >
  <Status status="loading"/>
-  <Head>This is a child string</Head>  
+  <Head>This is a child string</Head> 
+<Eye><Head>i am the main container of the eye container</Head></Eye>
      {/*  <Greet name='Samuel' messages={10} isLoggedin={true}/>
       <Person name={PersonName}/>
       <PersonList Persons={namelist}/> */}
