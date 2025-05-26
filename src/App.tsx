@@ -1,9 +1,11 @@
 import "./styles/style.css"
-import Greet from "./components/Greet"
+/* import Greet from "./components/Greet"
 import Person from "./components/Person"
-import PersonList from "./components/PersonList"
+import PersonList from "./components/PersonList" */
 
-const PersonName={
+import Status from "./components/Status"
+
+/* const PersonName={
 
  First:"Samuel",
  Last:"Yawson"
@@ -23,7 +25,7 @@ const namelist=[
   },
 
 
-]
+] */
 
 
 
@@ -32,9 +34,11 @@ function App() {
 
   return (
     < >
-      <Greet name='Samuel' messages={10} isLoggedin={true}/>
+ <Status status="loading"/>
+    
+     {/*  <Greet name='Samuel' messages={10} isLoggedin={true}/>
       <Person name={PersonName}/>
-      <PersonList Persons={namelist}/>
+      <PersonList Persons={namelist}/> */}
     </>
   )
 }
