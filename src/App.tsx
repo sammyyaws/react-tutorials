@@ -2,7 +2,7 @@ import "./styles/style.css"
 /* import Greet from "./components/Greet"
 import Person from "./components/Person"
 import PersonList from "./components/PersonList" */
-
+import Head from "./components/Head"
 import Status from "./components/Status"
 
 /* const PersonName={
@@ -35,7 +35,7 @@ function App() {
   return (
     < >
  <Status status="loading"/>
-    
+  <Head>This is a child string</Head>  
      {/*  <Greet name='Samuel' messages={10} isLoggedin={true}/>
       <Person name={PersonName}/>
       <PersonList Persons={namelist}/> */}
