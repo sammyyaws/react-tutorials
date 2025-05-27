@@ -7,7 +7,7 @@ import Status from "./components/Status"
 import Eye from "./components/Eye"
 import Button from "./components/Button"
 import Input from "./components/Input"
-
+import Container from "./components/Container"
 
 /* const PersonName={
 
@@ -46,6 +46,7 @@ function App() {
       <PersonList Persons={namelist}/> */}
       <Button handleClick={(event,id)=>(console.log("This is an event prop"),event,id)}/>
         <Input value="" handleChange={(event)=>console.log(event)}/>
+        <Container style={{backgroundColor:"blue",color:"greenyellow", padding:"5px,8px"}}/>
     </>
   )
 }
