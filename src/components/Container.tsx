@@ -1,6 +1,4 @@
-type ContainerProps={
-    style:React.CSSProperties;
-}
+import type { ContainerProps } from "./Export.types"
 
 
 function Container(props:ContainerProps) {
