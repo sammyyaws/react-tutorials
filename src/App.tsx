@@ -13,6 +13,7 @@ import Container from "./components/Container"
  */
 
 import User from "./components/StatesTyping/User"
+import Reducer from "./components/StatesTyping/Reducer"
 /* const PersonName={
 
  First:"Samuel",
@@ -43,7 +44,7 @@ function App() {
   return (
     < >
 <User />
-
+<Reducer/>
 
 
 
