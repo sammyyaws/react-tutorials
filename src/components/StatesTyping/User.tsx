@@ -7,18 +7,14 @@ const userData={
 }
 
 function User() {
-const [LogState,setLogState]=useState<userDataType|null>(null)
+const [LogState,setLogState]=useState<userDataType>({} as userDataType )
 const handleLogin=()=>{
 setLogState(userData)
-}
-const handleLogout=()=>{
-setLogState(null)
 }
 
   return (
     <div>
-      <button className="px-3 m-1.5 rounded-sm bg-amber-500" onClick={handleLogout}> LOG OUT</button>
-      <button className="px-3 m-1.5 rounded-md bg-amber-500"  onClick={handleLogin}> LOG IN</button>
+         <button className="px-3 m-1.5 rounded-md bg-amber-500"  onClick={handleLogin}> LOG IN</button>
 {/**since Logstate has two possible  types 
  * when accessing the state property we have to us ethe optional operator ? */}
 <div>You have successfully logged in as {LogState?.name}</div>
