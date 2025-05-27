@@ -19,7 +19,7 @@ setLogState(null)
     <div>
       <button className="px-3 m-1.5 rounded-sm bg-amber-500" onClick={handleLogout}> LOG OUT</button>
       <button className="px-3 m-1.5 rounded-md bg-amber-500"  onClick={handleLogin}> LOG IN</button>
-<div>{LogState?<h3>You have successfully logged in as {LogState.name}</h3>:<h3>You have logged out</h3>}</div>
+<div>You have successfully logged in as {LogState?.name}</div>
     </div>
   )
 }
