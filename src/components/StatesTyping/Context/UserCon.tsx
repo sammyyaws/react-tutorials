@@ -27,7 +27,7 @@ if (UserContext){
         <button  className="mx-2 p-1.5 bg-cyan-600" onClick={handleLogin}>in</button>
           <button className="mx-2 p-1.5 bg-cyan-600" onClick={handleLogout}>out</button>
       <div>{UserContext?.user?.email}</div>
-        <div>{UserContext?.user?.firstname}</div>
+        <div>{UserContext?.user?.email}</div>
     </div>
   )
 }
