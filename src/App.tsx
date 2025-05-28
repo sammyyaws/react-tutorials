@@ -16,6 +16,8 @@ import User from "./components/StatesTyping/User"
 import Reducer from "./components/StatesTyping/Reducer"
 import { ThemeContextProvider } from "./components/StatesTyping/Context/ThemeContext"
 import About from "./components/StatesTyping/Context/About"
+import { UserContextProvider } from "./components/StatesTyping/Context/ContextUser"
+import UserCon from "./components/StatesTyping/Context/UserCon"
 /* const PersonName={
 
  First:"Samuel",
@@ -51,6 +53,9 @@ function App() {
 <About/>
 </ThemeContextProvider>
 
+<UserContextProvider>
+  <UserCon/>
+</UserContextProvider>
 
 
 
