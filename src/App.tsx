@@ -14,6 +14,8 @@ import Container from "./components/Container"
 
 import User from "./components/StatesTyping/User"
 import Reducer from "./components/StatesTyping/Reducer"
+import { ThemeContextProvider } from "./components/StatesTyping/Context/ThemeContext"
+import About from "./components/StatesTyping/Context/About"
 /* const PersonName={
 
  First:"Samuel",
@@ -45,6 +47,9 @@ function App() {
     < >
 <User />
 <Reducer/>
+<ThemeContextProvider>
+<About/>
+</ThemeContextProvider>
 
 
 
