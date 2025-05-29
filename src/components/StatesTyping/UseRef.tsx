@@ -6,6 +6,7 @@ function UseRef() {
     useEffect(()=>{
         inputRef.current.focus()
     },[])
+    
   return (
     <div>
       <input ref={inputRef}/>
