@@ -12,12 +12,13 @@ import Input from "./components/Input"
 import Container from "./components/Container"
  */
 
-import User from "./components/StatesTyping/User"
+/* import User from "./components/StatesTyping/User"
 import Reducer from "./components/StatesTyping/Reducer"
 import { ThemeContextProvider } from "./components/StatesTyping/Context/ThemeContext"
 import About from "./components/StatesTyping/Context/About"
 import { UserContextProvider } from "./components/StatesTyping/Context/ContextUser"
-import UserCon from "./components/StatesTyping/Context/UserCon"
+import UserCon from "./components/StatesTyping/Context/UserCon" */
+import List from "./components/Generic typing/List"
 /* const PersonName={
 
  First:"Samuel",
@@ -47,7 +48,15 @@ function App() {
 
   return (
     < >
-<User />
+<List items={[
+  {name:"jacob"},
+  {name:"ama"}
+]} 
+onClick={(item)=>console.log(item)}   renderItem={(item) => <span>{item.name}</span>}/>
+
+<List    renderItem={(item) => <span>{item}</span>}  items={[30,49]} onClick={(item)=>console.log(item)}/>
+
+{/* <User />
 <Reducer/>
 <ThemeContextProvider>
 <About/>
@@ -56,10 +65,7 @@ function App() {
 <UserContextProvider>
   <UserCon/>
 </UserContextProvider>
-
-
-
-
+ */}
 
 
 {/*  <Status status="loading"/>
