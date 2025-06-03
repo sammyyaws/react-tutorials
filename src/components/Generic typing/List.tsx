@@ -9,7 +9,7 @@ function List<Generic >({items,onClick,renderItem}:genytypeProps<Generic>) {
 
   return (
     <div>
-        <h3>Generic typing item list</h3>
+        <h1>Generic typing item list</h1>
       {items.map((item,index)=>{
         return (
   <div key={index} onClick={()=>onClick(item)}>  {renderItem(item)} </div>
