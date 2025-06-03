@@ -51,7 +51,7 @@ function App() {
     < >
 
 
-<RestrictProps isZero={true}  value={10} isNegative={true} isPositive={true}/>
+<RestrictProps  value={10}  isPositive={true}/>
 
 
 
