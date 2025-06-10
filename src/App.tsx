@@ -42,7 +42,7 @@ const namelist=[
 
 ] */
 import RestrictProps from "./components/Restrictions/RestrictProps"
-
+import ButtonWrap from "./components/ButtonWrap"
 
 function App() {
 
@@ -54,7 +54,7 @@ function App() {
 <RestrictProps  value={10}  isPositive={true}/>
 
 
-
+<ButtonWrap variant="primary" onClick={()=>{console.log("hello world")}}>Primary click</ButtonWrap>
 
 
 
