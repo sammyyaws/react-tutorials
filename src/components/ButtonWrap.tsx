@@ -1,8 +1,9 @@
 
 
 type BWrap={
-    variant:"primary"|"secondary"
-} & React.ComponentProps<'button'>
+    variant:"primary"|"secondary";
+    children:string;
+} & Omit< React.ComponentProps<'button'>,'children'>
  
 function ButtonWrap({variant,children,...rest}:BWrap) {
   return (

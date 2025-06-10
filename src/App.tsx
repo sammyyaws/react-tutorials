@@ -54,7 +54,9 @@ function App() {
 <RestrictProps  value={10}  isPositive={true}/>
 
 
-<ButtonWrap variant="primary" onClick={()=>{console.log("hello world")}}>Primary click</ButtonWrap>
+<ButtonWrap variant="primary" onClick={()=>{console.log("hello world")}}>
+PLease click
+</ButtonWrap>
 
 
 
