@@ -1,1 +1,6 @@
-console.log("welcome to redux")
+const VideoAdded="VideoAdded";
+
+function GetVideo(){
+{
+    type=VideoAdded;
+}}
