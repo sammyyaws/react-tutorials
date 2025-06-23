@@ -1,3 +1,6 @@
+const redux=require("redux");
+const createStore=redux.createStore()
+
 const VideoAdded="VideoAdded";
 
 
@@ -30,5 +33,9 @@ function reducer(state=initialState,action){
         return state;
     }
 
-
 }
+
+const store=createStore(reducer)
+console.log(store.getState())
+
+store.subscribe(()=>console.log(store.getState))
