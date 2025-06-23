@@ -38,4 +38,7 @@ function reducer(state=initialState,action){
 const store=createStore(reducer)
 console.log(store.getState())
 
+//dispatching action
+store.dispatch(GetVideo())
+
 store.subscribe(()=>console.log(store.getState))
