@@ -1,5 +1,5 @@
 const redux=require("redux");
-const createStore=redux.createStore()
+const createStore=redux.createStore;
 
 const VideoAdded="VideoAdded";
 
@@ -7,8 +7,9 @@ const VideoAdded="VideoAdded";
 //action creator
 
 function GetVideo(){
-{
-    type=VideoAdded;
+
+return    {
+    type:VideoAdded,
 }}
 //state declaration which is supposed to be an object always
 
@@ -21,7 +22,7 @@ const initialState={
 
 function reducer(state=initialState,action){
 
-    switch(action){
+    switch(action.type){
      case VideoAdded:
         return {
             ...state,
@@ -34,11 +35,17 @@ function reducer(state=initialState,action){
     }
 
 }
-
+ //create the store
 const store=createStore(reducer)
 console.log(store.getState())
 
+
+
+const unsubscribe=store.subscribe(()=>console.log(store.getState()))
+
 //dispatching action
 store.dispatch(GetVideo())
-
-store.subscribe(()=>console.log(store.getState))
+store.dispatch(GetVideo())
+store.dispatch(GetVideo())
+//unsubscribe
+unsubscribe();
