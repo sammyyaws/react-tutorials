@@ -1,33 +1,64 @@
 const redux=require("redux");
 const createStore=redux.createStore;
 const bindActionCreators=redux.bindActionCreators;
-
+const combineReducers=redux.combineReducers;
 const VideoAdded="VideoAdded";
+const AudionAdded="AudioAdded"
 
+//action creators
 
-//action creator
+//audio action createor
+function GetAudio(){
+    return{
+        type:AudionAdded,
+    }
+}
+//video action creator
 
 function GetVideo(){
 
 return    {
     type:VideoAdded,
 }}
-//state declaration which is supposed to be an object always
+//initialStates
+const AudinitialState={
+    audio:10,
+    mp3:8
 
-const initialState={
-    video:10,
-    mp3:5,
 }
 
-//reducer 
+const VidinitialState={
+    video:10,
+    mp4:5,
+}
 
-function reducer(state=initialState,action){
+
+//reducer for AudioAdded
+function audReducer(state=AudinitialState,action){
+switch (action.type){
+    case AudionAdded:
+        return{
+            ...state,
+            audio:state.audio+state.mp3
+        }
+    default:
+    return state;
+
+}
+}
+
+
+
+
+//reducer for the VideoAdded action
+
+function vidReducer(state=VidinitialState,action){
 
     switch(action.type){
      case VideoAdded:
         return {
             ...state,
-            video:state.video+1,
+            video:state.video+state.mp4,
 
         
         }
@@ -36,8 +67,15 @@ function reducer(state=initialState,action){
     }
 
 }
+
+// Combining the reducer
+const rootReducer=combineReducers({
+    vid:audReducer,
+    aud:audReducer
+
+})
  //create the store
-const store=createStore(reducer)
+const store=createStore(rootReducer)
 console.log(store.getState())
 
 
@@ -51,8 +89,11 @@ store.dispatch(GetVideo()) */
 
 //using the bindActionCreator helper funcrion being use to dispatch the action
 
-const actions=bindActionCreators({GetVideo},store.dispatch)
+const actions=bindActionCreators({GetVideo,GetAudio},store.dispatch)
 actions.GetVideo();
 actions.GetVideo();
+actions.GetAudio();
+actions.GetAudio();
+actions.GetAudio();
 //unsubscribe
 unsubscribe();
