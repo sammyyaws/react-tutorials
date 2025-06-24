@@ -1,5 +1,6 @@
 const redux=require("redux");
 const createStore=redux.createStore;
+const bindActionCreators=redux.bindActionCreators;
 
 const VideoAdded="VideoAdded";
 
@@ -44,8 +45,14 @@ console.log(store.getState())
 const unsubscribe=store.subscribe(()=>console.log(store.getState()))
 
 //dispatching action
+/* store.dispatch(GetVideo())
 store.dispatch(GetVideo())
-store.dispatch(GetVideo())
-store.dispatch(GetVideo())
+store.dispatch(GetVideo()) */
+
+//using the bindActionCreator helper funcrion being use to dispatch the action
+
+const actions=bindActionCreators({GetVideo},store.dispatch)
+actions.GetVideo();
+actions.GetVideo();
 //unsubscribe
 unsubscribe();
