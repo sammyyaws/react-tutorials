@@ -10,7 +10,7 @@ const AudionAdded="AudioAdded"
 //audio action createor
 function GetAudio(){
     return{
-        type:AudionAdded,
+        type:AudioAdded,
     }
 }
 //video action creator
@@ -36,7 +36,7 @@ const VidinitialState={
 //reducer for AudioAdded
 function audReducer(state=AudinitialState,action){
 switch (action.type){
-    case AudionAdded:
+    case AudioAdded:
         return{
             ...state,
             audio:state.audio+state.mp3
@@ -70,7 +70,7 @@ function vidReducer(state=VidinitialState,action){
 
 // Combining the reducer
 const rootReducer=combineReducers({
-    vid:audReducer,
+    vid:VidReducer,
     aud:audReducer
 
 })
